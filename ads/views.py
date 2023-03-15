@@ -90,13 +90,13 @@ class AdsView(View):
         Returns the saved object as JSON.
         """
         ad_data = json.loads(request.body)
-        print(type(ad_data["price"]))
+        print(type(ad_data["price"]), ad_data["price"])
         ad = Ads()
-        ad.name = ad_data["name"],
-        ad.price = 0,    # ad_data["price"],
-        ad.description = ad_data["description"],
-        ad.author = ad_data["author"],
-        ad.address = ad_data["address"],
+        ad.name = ad_data["name"]
+        ad.price = ad_data["price"]
+        ad.description = ad_data["description"]
+        ad.author = ad_data["author"]
+        ad.address = ad_data["address"]
 
         ad.save()
 
